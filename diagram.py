@@ -1,5 +1,6 @@
 from diagrams import Diagram
-from diagrams.generic.blank import Blank
+from diagrams.aws.network import APIGateway
+from diagrams.aws.compute import Lambda
 
-with Diagram("Terraform Module Template", show=False, direction="TB"):
-    Blank("module placeholder")
+with Diagram("AWS Lambda API", show=False, direction="TB"):
+    APIGateway("api target") >> Lambda("lambda function")
